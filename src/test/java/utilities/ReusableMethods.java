@@ -152,4 +152,57 @@ public class ReusableMethods {
     }
 
 
+   
+
+    public void waitUntilClickable(WebElement objElement){
+
+        WebDriverWait wait= new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.elementToBeClickable(objElement));
     }
+
+    public void waitUntilVisible(WebElement objElement){
+
+        WebDriverWait wait= new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOf(objElement));
+    }
+
+    public void listElementsIsclickable(List<WebElement> element){
+
+        for (WebElement obj : element) {
+
+            waitUntilClickable(obj);
+            verifyContainsText(obj, obj.getText());
+        }
+    }
+
+    public void hoverOverElement(WebElement element){
+
+        Actions actions = new Actions(Driver.getDriver());
+         actions.moveToElement(element).perform();
+
+    }
+
+    public void hoverElementandDropdownsMenuVisibility(List<WebElement> element){
+
+        for (WebElement obj : element) {
+            hoverOverElement(obj);
+            waitUntilVisible(obj);
+            Assert.assertTrue(obj.isDisplayed());
+
+        }
+    }
+
+    public void verifyContainsText(WebElement element, String message) {
+
+            clickFunction(element);
+            Assert.assertTrue(Driver.driver.getCurrentUrl().toLowerCase().contains(message.toLowerCase()));
+
+
+    }
+
+    public void clickFunction(WebElement element) {
+        waitUntilClickable(element);
+        element.click();
+    }
+}
+
