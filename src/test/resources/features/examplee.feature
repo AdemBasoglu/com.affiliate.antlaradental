@@ -1,5 +1,6 @@
 @Smoke
-Feature:a
+Feature:User should be login
 
-  Scenario:a
+  Scenario:User should be register correct email and password
     Given user goes the check24 home page
+    And The user should close to cookies pop up
