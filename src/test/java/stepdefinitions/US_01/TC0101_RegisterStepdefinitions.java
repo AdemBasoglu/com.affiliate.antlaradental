@@ -1,12 +1,12 @@
-package stepdefinitions;
+package stepdefinitions.US_01;
 
 import io.cucumber.java.en.Given;
-import pages.ExamplePage;
+import pages.HomePage;
 import utilities.ConfigReader;
 import utilities.Driver;
 
-public class ExampleStepdefinitions {
- ExamplePage examplePage = new ExamplePage();
+public class TC0101_RegisterStepdefinitions {
+ HomePage homePage = new HomePage();
 
 
 
