@@ -7,12 +7,19 @@ import utilities.Driver;
 
 public class HomePage {
 
-    public HomePage(){
-        PageFactory.initElements(Driver.getDriver(),this);
+    public HomePage() {
+        PageFactory.initElements(Driver.getDriver(), this);
     }
 
 
+    @FindBy(xpath = "//*[text()='Geht klar'] ")
+    public WebElement gehtKlarButton;
+
     @FindBy(xpath = "//*[text()='Mein Konto'] ")
     public WebElement meinKontoLink;
+
+    @FindBy(xpath = "//*[text()='Starten Sie hier.'] ")
+    public WebElement startenSieHierLink;
+
 
 }
