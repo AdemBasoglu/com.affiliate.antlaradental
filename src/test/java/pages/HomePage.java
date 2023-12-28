@@ -20,6 +20,18 @@ public class HomePage {
 
     @FindBy(xpath = "//*[text()='Starten Sie hier.'] ")
     public WebElement startenSieHierLink;
+    @FindBy(xpath = "//*[text()='Nachhaltigkeit'][1]")
+    public WebElement Nachhaltigkeit;
+
+    @FindBy(xpath = "//*[text()='Nachhaltige Unternehmensführung']")
+    public WebElement NUnternehmensführung;
+
+    @FindBy(xpath = "//*[text()='Ausgezeichnetes Engagement']")
+    public WebElement Ausgezeichnetes;
+
+
+
+
 
 
 }
