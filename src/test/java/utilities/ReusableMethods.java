@@ -1,6 +1,7 @@
 package utilities;
 
 import org.apache.commons.io.FileUtils;
+import org.junit.Assert;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
@@ -151,9 +152,6 @@ public class ReusableMethods {
         js.executeScript("window.scrollBy(0,"+scrollBy+")");
     }
 
-
-   
-
     public void waitUntilClickable(WebElement objElement){
 
         WebDriverWait wait= new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
@@ -166,7 +164,7 @@ public class ReusableMethods {
         wait.until(ExpectedConditions.visibilityOf(objElement));
     }
 
-    public void listElementsIsclickable(List<WebElement> element){
+    public  void listElementsIsclickable(List<WebElement> element){
 
         for (WebElement obj : element) {
 
