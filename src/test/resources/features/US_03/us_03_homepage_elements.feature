@@ -1,3 +1,4 @@
+@Smoke
 Feature: US03_Check24.de
 
 

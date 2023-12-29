@@ -20,7 +20,7 @@ public class HomePage {
 
     @FindBy(xpath = "//a[@class='c24-meinkonto-reflink c24-meinkonto-register-link c24-uliloginlayer-register-opener'] ")
     public WebElement startenSieHierLink;
-    @FindBy(xpath = "//*[text()='Nachhaltigkeit'][1]")
+    @FindBy(xpath = "(//*[text()='Nachhaltigkeit'][1])[1]")
     public WebElement Nachhaltigkeit;
 
     @FindBy(xpath = "//*[text()='Nachhaltige Unternehmensführung']")
