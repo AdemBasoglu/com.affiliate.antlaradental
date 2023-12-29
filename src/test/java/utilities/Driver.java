@@ -20,15 +20,6 @@ import java.util.NoSuchElementException;
 public class Driver {
     //create a driver instance
     public static WebDriver driver;
-    public static int timeout = 5;
-
-    //What?=>It is just to create, initialize the driver instance.(Singleton driver)
-    //Why?=>We don't want to create and initialize the driver when we don't need
-    //We will create and initialize the driver when it is null
-    //We can use Driver class with different browser(chrome,firefox,headless)
-    private Driver() {
-        //we don't want to create another abject. Singleton pattern
-    }
 
     //to initialize the driver we create a static method
     public static WebDriver getDriver() {
@@ -44,10 +35,8 @@ public class Driver {
             } else if ("safari".equals(browser)) {
                 driver = new SafariDriver();
             } else if ("chrome-headless".equals(browser)) {
-                //    driver = new ChromeDriver(new ChromeOptions().setHeadless(true));
             }
         }
-        //    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.manage().window().maximize();
         return driver;
     }
@@ -56,10 +45,17 @@ public class Driver {
         if (driver != null) {//if the driver is pointing chrome
             driver.quit();//quit the driver
             driver = null;//set it back to null to make sure driver is null
-            // so I can initialize it again
-            //This is important especially you do cross browser testing(testing with
-            // multiple browser like chrome, firefox, ie etc.)
+
         }
+    }
+
+    public static void quitDriver() {
+
+        if (driver != null) {
+            driver.quit();
+            driver = null;
+        }
+
     }
 
     //    Driver.selectByVisibleText(dropdown element, "CHECKING-91303-116.98$")
@@ -67,16 +63,13 @@ public class Driver {
         Select objSelect = new Select(element);
         objSelect.selectByVisibleText(text);
     }
-    //    Parameter1 : WebElement
-//    Parameter2:  int
-//    Driver.selectByIndex(dropdown element, 1)
+
+
     public static void selectByIndex(WebElement element, int index) {
         Select objSelect = new Select(element);
         objSelect.selectByIndex(index);
     }
-    //    Parameter1 : WebElement
-//    Parameter2:  String
-//    Driver.selectByIndex(dropdown element, "91303")
+
     public static void selectByValue(WebElement element, String value) {
         Select objSelect = new Select(element);
         List<WebElement> elementCount = objSelect.getOptions();
@@ -86,3 +79,4 @@ public class Driver {
 
 
 }
+

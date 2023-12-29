@@ -8,7 +8,6 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -32,7 +31,6 @@ public class ReusableMethods {
         FileUtils.copyFile(source, finalDestination);
         return target;
     }
-
     //========Switching Window=====//
     public static void switchToWindow(String targetTitle) {
         String origin = Driver.getDriver().getWindowHandle();
@@ -44,13 +42,11 @@ public class ReusableMethods {
         }
         Driver.getDriver().switchTo().window(origin);
     }
-
     //========Hover Over=====//
     public static void hover(WebElement element) {
         Actions actions = new Actions(Driver.getDriver());
         actions.moveToElement(element).perform();
     }
-
     //==========Return a list of string given a list of Web Element====////
     public static List<String> getElementsText(List<WebElement> list) {
         List<String> elemTexts = new ArrayList<>();
@@ -61,7 +57,6 @@ public class ReusableMethods {
         }
         return elemTexts;
     }
-
     //========Returns the Text of the element given an element locator==//
     public static List<String> getElementsText(By locator) {
         List<WebElement> elems = Driver.getDriver().findElements(locator);
@@ -73,7 +68,6 @@ public class ReusableMethods {
         }
         return elemTexts;
     }
-
     //   HARD WAIT WITH THREAD.SLEEP
 //   waitFor(5);  => waits for 5 second
     public static void wait(int saniye) {
@@ -83,23 +77,19 @@ public class ReusableMethods {
             e.printStackTrace();
         }
     }
-
     //===============Explicit Wait==============//
     public static WebElement waitForVisibility(WebElement element, int timeout) {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(timeout));
         return wait.until(ExpectedConditions.visibilityOf(element));
     }
-
     public static WebElement waitForVisibility(By locator, int timeout) {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(timeout));
         return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
-
     public static WebElement waitForClickablility(WebElement element, int timeout) {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(timeout));
         return wait.until(ExpectedConditions.elementToBeClickable(element));
     }
-
     public static void clickWithTimeOut(WebElement element, int timeout) {
         for (int i = 0; i < timeout; i++) {
             try {
@@ -110,7 +100,6 @@ public class ReusableMethods {
             }
         }
     }
-
     public static void waitForPageToLoad(long timeout) {
         ExpectedCondition<Boolean> expectation = new ExpectedCondition<Boolean>() {
             public Boolean apply(WebDriver driver) {
@@ -126,7 +115,6 @@ public class ReusableMethods {
                     "Timeout waiting for Page Load Request to complete after " + timeout + " seconds");
         }
     }
-
     //======Fluent Wait====//
     public static WebElement fluentWait(final WebElement webElement, int timeout) {
         //FluentWait<WebDriver> wait = new FluentWait<WebDriver>(Driver.getDriver()).withTimeout(timeinsec, TimeUnit.SECONDS).pollingEvery(timeinsec, TimeUnit.SECONDS);
@@ -140,122 +128,71 @@ public class ReusableMethods {
         });
         return element;
     }
-
-    public static void keysPageDown() {
+    public static void keysPageDown(){
         Actions actions = new Actions(Driver.getDriver());
         actions.sendKeys(Keys.PAGE_DOWN).perform();
     }
-
     public static void keysPageUp() {
         Actions actions = new Actions(Driver.getDriver());
         actions.sendKeys(Keys.PAGE_UP).perform();
     }
 
-    public static void actionPageDown() {
-        Actions actions = new Actions(Driver.getDriver());
-        actions.sendKeys(Keys.PAGE_DOWN).perform();
+        public static void actionPageDown () {
+            Actions actions = new Actions(Driver.getDriver());
+            actions.sendKeys(Keys.PAGE_DOWN).perform();
+        }
+        public static void actionPageup () {
+            Actions actions = new Actions(Driver.getDriver());
+            actions.sendKeys(Keys.PAGE_UP).perform();
+
+        }
+    public static void jsScrollBy(int scrollBy){
+        JavascriptExecutor js=(JavascriptExecutor)Driver.getDriver();
+        js.executeScript("window.scrollBy(0,"+scrollBy+")");
     }
 
-    public static void actionPageup() {
-        Actions actions = new Actions(Driver.getDriver());
-        actions.sendKeys(Keys.PAGE_UP).perform();
+    public void waitUntilClickable(WebElement objElement){
 
-    }
-
-    public static void jsScrollBy(int scrollBy) {
-        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
-        js.executeScript("window.scrollBy(0," + scrollBy + ")");
-    }
-
-
-    public void waitUntilClickable(WebElement objElement) {
-
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
+        WebDriverWait wait= new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(objElement));
     }
 
-    public void waitUntilVisible(WebElement objElement) {
+    public void waitUntilVisible(WebElement objElement){
 
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(20));
+        WebDriverWait wait= new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
         wait.until(ExpectedConditions.visibilityOf(objElement));
     }
 
-    public void listElementsIsclickable(List<WebElement> elements, WebElement header) {
+    public  void listElementsIsclickable(List<WebElement> element){
 
+        for (WebElement obj : element) {
 
-        WebElement obj;
-
-        for (int i = 0; i < elements.size(); i++) {
-            obj = elements.get(i);
             waitUntilClickable(obj);
-            String elementText = obj.getText().replaceAll("[^a-zA-Z]+", "");
-
-
-            if (5 <= i && i <= 8 && !elementText.equals("Shopping")) {
-
-                if (i != 6) {
-                    hoverOverElement(obj);
-                    clickFunction(obj);
-                    waitUntilVisible(header);
-                    String textHeader = header.getText();
-                    verifyContainsText(textHeader, elementText);
-                    Driver.getDriver().get(ConfigReader.getProperty("toUrl"));
-
-                } else {
-                    hoverOverElement(obj);
-                    clickFunction(obj);
-                    waitUntilVisible(header);
-                    String textHeader = header.getText();
-                    Assert.assertTrue(textHeader.toLowerCase().contains("flüge"));
-                    Driver.getDriver().get(ConfigReader.getProperty("toUrl"));
-                }
-
-
-            } else {
-
-                if (!elementText.equals("Shopping")) {
-                    hoverOverElement(obj);
-                    clickFunction(obj);
-                    verifyContainsText(Driver.getDriver().getCurrentUrl(), elementText);
-                }
-            }
-
-
-            Driver.getDriver().navigate().refresh();
-
+            verifyContainsText(obj, obj.getText());
         }
     }
 
-
-    public void hoverOverElement(WebElement element) {
+    public void hoverOverElement(WebElement element){
 
         Actions actions = new Actions(Driver.getDriver());
-        actions.moveToElement(element).perform();
+         actions.moveToElement(element).perform();
 
     }
 
-    public void hoverElementandDropdownsMenuVisibility(List<WebElement> elements, List<WebElement> dropdowns) {
+    public void hoverElementandDropdownsMenuVisibility(List<WebElement> element){
 
-        int i = 0;
-        for (WebElement obj : elements) {
+        for (WebElement obj : element) {
+            hoverOverElement(obj);
+            waitUntilVisible(obj);
+            Assert.assertTrue(obj.isDisplayed());
 
-            for (WebElement obj_dropdown : dropdowns) {
-                if (i != 11) {
-                    waitUntilVisible(obj);
-                    hoverOverElement(obj);
-                    i++;
-                    if (obj_dropdown.isDisplayed()) {
-                        break;
-                    }
-                }
-            }
         }
     }
 
-    public void verifyContainsText(String str, String message) {
+    public void verifyContainsText(WebElement element, String message) {
 
-
-        Assert.assertTrue(str.toLowerCase().contains(message.toLowerCase().replaceAll("[ı]", "i").substring(0, 4)));
+            clickFunction(element);
+            Assert.assertTrue(Driver.driver.getCurrentUrl().toLowerCase().contains(message.toLowerCase()));
 
 
     }
