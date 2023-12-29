@@ -2,6 +2,9 @@ package stepdefinitions.US_03;
 
 import io.cucumber.java.en.Given;
 import pages.US_03_Elements_Homepage;
+import utilities.Driver;
+
+
 
 public class TC0103_Elements_HomepageSteps {
 
@@ -17,7 +20,7 @@ public class TC0103_Elements_HomepageSteps {
         elements_homepage.listElementsIsclickable(elements_homepage.getElements(), elements_homepage.getTravelHeadingElement());
 
         elements_homepage.hoverElementandDropdownsMenuVisibility(elements_homepage.getElements(),elements_homepage.getElements_dropDownsMenu());
-
+        Driver.closeDriver();
 
 
     }
