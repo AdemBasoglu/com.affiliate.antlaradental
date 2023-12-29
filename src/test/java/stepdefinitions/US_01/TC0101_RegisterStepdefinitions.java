@@ -1,6 +1,6 @@
 package stepdefinitions.US_01;
 
-//import com.github.javafaker.Faker;
+import com.github.javafaker.Faker;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -15,7 +15,7 @@ import static utilities.Driver.driver;
 
 public class TC0101_RegisterStepdefinitions {
     HomePage homePage = new HomePage();
-   // Faker faker = new Faker();
+    Faker faker = new Faker();
     RegisterPage registerPage = new RegisterPage();
     String password = "";
 
@@ -43,7 +43,7 @@ public class TC0101_RegisterStepdefinitions {
     @When("The user sees the text CHECK24 Kundenkonto anlegen,user enters her or his valid e-mail address in the input field")
     public void the_user_sees_the_text_check24_kundenkonto_anlegen_user_enters_her_his_valid_e_mail_address_in_the_input_field() {
         driver.switchTo().frame(registerPage.emailIframe);
-    //    registerPage.emailBox.sendKeys(faker.internet().emailAddress());
+        registerPage.emailBox.sendKeys(faker.internet().emailAddress());
     }
 
     @Then("The user clicks weiter button")
@@ -55,17 +55,17 @@ public class TC0101_RegisterStepdefinitions {
 
     @Then("The user enters a name in the Vorname field")
     public void the_user_enters_a_name_in_the_vorname_field() {
-      //  registerPage.vorNameBox.sendKeys(faker.name().firstName());
+       registerPage.vorNameBox.sendKeys(faker.name().firstName());
     }
 
     @Then("The user enters a last name in the Nachname  field")
     public void the_user_enters_a_last_name_in_the_nachname_field() {
-       // registerPage.nachNameBox.sendKeys(faker.name().lastName());
+        registerPage.nachNameBox.sendKeys(faker.name().lastName());
     }
 
     @Then("The user enters a password in the Passwort field that consists of a minimum of {int} and a maximum of {int} characters.")
     public void the_user_enters_a_password_in_the_passwort_field_that_consists_of_a_minimum_of_and_a_maximum_of_characters(Integer int1, Integer int2) {
-       // password = faker.internet().password(8, 50);
+        password = faker.internet().password(8, 50);
         registerPage.passwort.sendKeys(password);
     }
 
