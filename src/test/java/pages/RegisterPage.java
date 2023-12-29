@@ -1,5 +1,6 @@
 package pages;
 
+import io.restassured.path.json.JsonPath;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -22,9 +23,7 @@ public class RegisterPage {
     @FindBy(id = "c24-uli-login-btn")
     public WebElement weiter;
 
-    @FindBy(xpath = "iframe[cd_frame_id_='0fbd0d1a36e40fda227cede8fe15a17b']")
-    public WebElement registerFormIframe;
-    @FindBy(xpath = "//input[@class='c24-uli-input']")
+    @FindBy(xpath = "(//input[@placeholder='Vorname'])")
     public WebElement vorNameBox;
 
     @FindBy(xpath = "//input[@id='cl_ul_lastname']")
@@ -33,8 +32,11 @@ public class RegisterPage {
     public WebElement passwort;
     @FindBy(xpath = "//input[@id='cl_ul_pw_register_repeat']")
     public WebElement passwortWiederholen;
-    @FindBy(xpath = "//button[@id='c24-uli-register-btn']")
+    @FindBy(id = "c24-uli-register-btn")
     public WebElement weiterButtonRegisterForm;
+
+    @FindBy(xpath = "//*[text()='Überprüfen Ihrer Identität'] ")
+    public WebElement codeSendText;
 
 
 
