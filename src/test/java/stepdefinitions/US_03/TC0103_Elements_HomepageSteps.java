@@ -7,9 +7,7 @@ public class TC0103_Elements_HomepageSteps {
 
     US_03_Elements_Homepage elements_homepage = new US_03_Elements_Homepage();
 
-    // public TC0103_Elements_HomepageSteps(US_03_Elements_Homepage elements_homepage) {
-    //   this.elements_homepage = elements_homepage;
-    //}
+
 
 
 
