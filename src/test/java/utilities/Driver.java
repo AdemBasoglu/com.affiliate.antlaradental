@@ -19,7 +19,6 @@ import java.util.NoSuchElementException;
 
 public class Driver {
     //create a driver instance
-
     public static WebDriver driver;
     public static int timeout = 5;
 
@@ -33,14 +32,11 @@ public class Driver {
 
     //to initialize the driver we create a static method
     public static WebDriver getDriver() {
-
         //create the driver if and only if it is null
         if (driver == null) {
             String browser = ConfigReader.getProperty("browser");
             if ("chrome".equals(browser)) {
                 driver = new ChromeDriver();
-
-
             } else if ("firefox".equals(browser)) {
                 driver = new FirefoxDriver();
             } else if ("ie".equals(browser)) {
@@ -88,10 +84,8 @@ public class Driver {
         System.out.println("number of elements: " + elementCount.size());
 }
 
+
 }
-
-
-
 
 
 
