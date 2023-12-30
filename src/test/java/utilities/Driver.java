@@ -12,10 +12,12 @@ import java.util.List;
 
 public class Driver {
     //create a driver instance
+
     public static WebDriver driver;
 
     //to initialize the driver we create a static method
     public static WebDriver getDriver() {
+
         //create the driver if and only if it is null
         if (driver == null) {
             String browser = ConfigReader.getProperty("browser");
@@ -70,6 +72,4 @@ public class Driver {
         System.out.println("number of elements: " + elementCount.size());
     }
 
-
 }
-

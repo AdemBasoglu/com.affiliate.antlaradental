@@ -11,7 +11,6 @@ public class HomePage {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-
     @FindBy(xpath = "//*[text()='Geht klar'] ")
     public WebElement gehtKlarButton;
 
@@ -20,6 +19,7 @@ public class HomePage {
 
     @FindBy(xpath = "//a[@class='c24-meinkonto-reflink c24-meinkonto-register-link c24-uliloginlayer-register-opener'] ")
     public WebElement startenSieHierLink;
+  
     @FindBy(xpath = "(//*[text()='Nachhaltigkeit'][1])[1]")
     public WebElement Nachhaltigkeit;
 
@@ -28,10 +28,6 @@ public class HomePage {
 
     @FindBy(xpath = "//*[text()='Ausgezeichnetes Engagement']")
     public WebElement Ausgezeichnetes;
-
-
-
-
 
 
 }
