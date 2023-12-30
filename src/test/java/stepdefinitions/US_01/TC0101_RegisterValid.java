@@ -13,7 +13,7 @@ import utilities.ReusableMethods;
 import static utilities.Driver.driver;
 
 
-public class TC0101_RegisterStepdefinitions {
+public class TC0101_RegisterValid {
     HomePage homePage = new HomePage();
     Faker faker = new Faker();
     RegisterPage registerPage = new RegisterPage();

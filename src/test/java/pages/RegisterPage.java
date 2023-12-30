@@ -38,6 +38,14 @@ public class RegisterPage {
     @FindBy(xpath = "//*[text()='Überprüfen Ihrer Identität'] ")
     public WebElement codeSendText;
 
+    @FindBy(xpath = "(//div[@class='c24-uli-error c24-uli-error-pw'])[1]")
+    public WebElement invalidPasswordText;
+
+    @FindBy(xpath = "//button[@id='c24-uli-pw-btn']")
+    public WebElement anmeldenButton;
+    @FindBy(xpath = "(//div[@class='c24-uli-error c24-uli-error-pw-repeat'])[1]")
+    public WebElement longPasswordText;
+
 
 
    
