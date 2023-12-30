@@ -15,7 +15,7 @@ public class HomePage {
     @FindBy(xpath = "//*[text()='Geht klar'] ")
     public WebElement gehtKlarButton;
 
-    @FindBy(xpath = "//*[text()='Mein Konto'] ")
+    @FindBy(xpath = "//*[text()='Mein Konto']")
     public WebElement meinKontoLink;
 
     @FindBy(xpath = "//*[text()='Starten Sie hier.'] ")
