@@ -1,7 +1,7 @@
 @Smoke
 Feature:The user should be not register
 
-  Scenario:The user should be not register existed email
+  Scenario:The user should be not register with existed email
 
     Given The user goes to the website
     Then The user should close to cookies pop up
