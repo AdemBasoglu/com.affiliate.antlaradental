@@ -6,6 +6,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
+
         //Allure report plugin
        plugin = {"pretty", "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"},
          //plugin = {"html:target/html-reports/rapor.html",
@@ -16,6 +17,7 @@ import org.junit.runner.RunWith;
         tags = "@Smoke",  // hangi Feature/Scenario'lar calisacak ?
         dryRun = false // true yapilirsa testi calistirmadan eksik adimlari verir
         // testleri calistirirken dryRun = false olmalidir
+
 )
 
 public class Runner {
