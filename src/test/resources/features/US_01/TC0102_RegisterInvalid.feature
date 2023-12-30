@@ -1,3 +1,4 @@
+@Smoke
 Feature:The user should be register
 
   Scenario:The user should be register correct email and password
@@ -10,6 +11,6 @@ Feature:The user should be register
     And The user enters a name in the Vorname field
     And The user enters a last name in the Nachname  field
     And The user enters a password in the Passwort field that consists of a minimum of 8 and a maximum of 50 characters.
-    And The user enters the same password again in the Passwort wiederholen field.
+    And The user enters the different password again in the Passwort wiederholen field.
     And The user clicks on the weiter button
-    Then The should be sees the text on the page Überprüfen Ihrer Identität
+    Then The should be sees the text on the page Die Passwörter stimmen nicht überein
