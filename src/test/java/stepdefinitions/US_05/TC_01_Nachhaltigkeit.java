@@ -17,11 +17,9 @@ public class TC_01_Nachhaltigkeit {
 
     @Then("The user clicks on the Nachhaltigkeit link")
     public void the_user_clicks_on_the_nachhaltigkeit_link() {
-        ReusableMethods.wait(2);
-        getDriver().findElement(By.xpath("//div[@class='c24-customer-trigger-close']")).click();
-        ReusableMethods.wait(2);
+        homePage.Internet.click();
         homePage.Nachhaltigkeit.click();
-        ReusableMethods.wait(5);
+        reusableMethods.wait(1);
 
     }
     @Then("The page should have the title  “Nachhaltige Unternehmensführung”.")
@@ -32,6 +30,6 @@ public class TC_01_Nachhaltigkeit {
     @Then("Close app")
     public void close_app() {
 
-        Driver.getDriver().quit();
+        Driver.closeDriver();
     }
 }
