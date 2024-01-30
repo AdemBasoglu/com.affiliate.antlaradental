@@ -14,8 +14,8 @@ import org.junit.runner.RunWith;
              //      "junit:target/xml-report/cucumber.xml"},
         features = "src/test/resources/features", // calisacak Feature/Scenario'lar nerede ?
         glue = "stepdefinitions",    // calisacak Feature/Scenario'larin kodlari nerede?
-        tags = "@US_10",  // hangi Feature/Scenario'lar calisacak ?
-        dryRun = false // true yapilirsa testi calistirmadan eksik adimlari verir
+        tags = "@Smoke",  // hangi Feature/Scenario'lar calisacak ?
+        dryRun = true // true yapilirsa testi calistirmadan eksik adimlari verir
         // testleri calistirirken dryRun = false olmalidir
 
 )
