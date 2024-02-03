@@ -12,7 +12,8 @@ public class RegisterPage {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-
+    @FindBy(xpath = "    //h1[normalize-space()='Affiliate Signup']")
+    public WebElement affiliateSignupText;
 
 
 }
