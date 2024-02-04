@@ -12,18 +12,16 @@ public class TC0310_Instagram {
     HomePage homePage = new HomePage();
     @Given("The user click to Instagram icon and goes to directed to the relevant page.")
     public void the_user_click_to_instagram_icon_and_goes_to_directed_to_the_relevant_page() {
-        ReusableMethods.jsScrollBy(4);
-        ReusableMethods.wait(3);
+        ReusableMethods.actionPageDown();
+        ReusableMethods.wait(1);
         homePage.instagramIcon.click();
+        ReusableMethods.wait(1);
     }
 
-
-
-    @And("The user verifies that the instagram page title is Antlara Dental Affiliate")
-    public void theUserVerifiesThatTheInstagramPageTitleIsAntlaraDentalAffiliate() {
-        String targetTitle = "Antlara Dental Affiliate";
+    @And("The user verifies that the instagram page title is Antlara Diş Polikliniği \\(@antlaradis) • Instagram photos and videos")
+    public void theUserVerifiesThatTheInstagramPageTitleIsAntlaraDisPoliklinigiAntlaradisInstagramPhotosAndVideos() {
+        String targetTitle="Antlara Diş Polikliniği (@antlaradis) • Instagram photos and videos";
         ReusableMethods.switchToWindow(targetTitle);
-        ReusableMethods.wait(2);
-        Assert.assertEquals(targetTitle,Driver.getDriver().getTitle());
+    Assert.assertEquals(targetTitle,Driver.getDriver().getTitle());
     }
 }

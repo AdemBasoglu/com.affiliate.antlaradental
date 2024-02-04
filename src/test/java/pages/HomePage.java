@@ -1,21 +1,15 @@
 package pages;
 
-import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import utilities.ConfigReader;
 import utilities.Driver;
-
-import java.util.List;
 
 public class HomePage {
 
     public HomePage() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
-
 
 
     @FindBy(xpath = "//span[normalize-space()='About Us']")
@@ -38,11 +32,11 @@ public class HomePage {
     public WebElement facebookIcon;
     @FindBy(xpath = "(//*[name()='svg'])[4]")
     public WebElement instagramIcon;
-    @FindBy(xpath = "(//*[name()='path'])[4]")
+    @FindBy(xpath = "//li[@class='wp-social-link wp-social-link-x  wp-block-social-link']")
     public WebElement twitterIcon;
-    @FindBy(xpath = "(//*[name()='svg'])[6]")
+    @FindBy(xpath = "//li[@class='wp-social-link wp-social-link-linkedin  wp-block-social-link']")
     public WebElement linkedInIcon;
-    @FindBy(xpath = "(//*[name()='path'])[6]")
+    @FindBy(xpath = "//li[@class='wp-social-link wp-social-link-youtube  wp-block-social-link']")
     public WebElement youtubeIcon;
 
     @FindBy(xpath = "//input[@id='wpforms-24-field_1']")
@@ -51,18 +45,8 @@ public class HomePage {
     @FindBy(xpath = "//button[@id='wpforms-submit-24']")
     public WebElement submitButton;
 
-    @FindBy(xpath = "//h1[normalize-space()='Antlara Dental Clinic']")
-    public WebElement aboutUsTitleText;
     @FindBy(xpath = "//button[normalize-space()='Allow all cookies'])[1]")
     public WebElement facebookAcceptCookies;
-    @FindBy(xpath = "//*[name()='svg'][@class='r-4qtqp9 r-yyyyoo r-dnmrzs r-bnwqim r-1plcrui r-lrvibr r-z80fyv r-19wmn03'])[1]")
-    public WebElement twitterSignupPopClose;
-    @FindBy(xpath = "//span[contains(text(),'Accept all cookies')]")
-    public WebElement twitteracceptCookies;
-
-
-
-
 
 
 }

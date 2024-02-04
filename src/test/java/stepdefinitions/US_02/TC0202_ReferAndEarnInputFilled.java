@@ -1,5 +1,6 @@
 package stepdefinitions.US_02;
 
+import com.github.javafaker.Faker;
 import io.cucumber.java.en.Given;
 import org.junit.Assert;
 import pages.HomePage;
@@ -9,10 +10,11 @@ import utilities.ReusableMethods;
 public class TC0202_ReferAndEarnInputFilled {
     HomePage homePage = new HomePage();
     RegisterPage registerPage = new RegisterPage();
+    Faker faker=new Faker();
 
     @Given("The user write a valid email")
     public void the_user_write_a_valid_email() {
-        homePage.referAndEarnInput.sendKeys("test1@gmail.com");
+        homePage.referAndEarnInput.sendKeys(faker.internet().emailAddress());
     }
 
     @Given("The user click submit button")

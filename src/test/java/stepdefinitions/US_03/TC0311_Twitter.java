@@ -23,14 +23,9 @@ public class TC0311_Twitter {
 
     @And("The user verifies that the Twitter page title")
     public void theUserVerifiesThatTheTwitterPageTitle() {
-        String targetTitle = "X. It’s what’s happening / X";
-        ReusableMethods.wait(15);
+        String targetTitle = "Log in to X / X";
+        ReusableMethods.wait(5);
         ReusableMethods.switchToWindow(targetTitle);
-        ReusableMethods.wait(15);
-        homePage.twitterSignupPopClose.click();
-        ReusableMethods.wait(15);
-        homePage.twitteracceptCookies.click();
-        ReusableMethods.wait(15);
         Assert.assertEquals(targetTitle,Driver.getDriver().getTitle());
     }
 }
