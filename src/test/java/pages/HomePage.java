@@ -53,8 +53,14 @@ public class HomePage {
 
     @FindBy(xpath = "//h1[normalize-space()='Antlara Dental Clinic']")
     public WebElement aboutUsTitleText;
+    @FindBy(xpath = "//button[normalize-space()='Allow all cookies'])[1]")
+    public WebElement facebookAcceptCookies;
+    @FindBy(xpath = "//*[name()='svg'][@class='r-4qtqp9 r-yyyyoo r-dnmrzs r-bnwqim r-1plcrui r-lrvibr r-z80fyv r-19wmn03'])[1]")
+    public WebElement twitterSignupPopClose;
+    @FindBy(xpath = "//span[contains(text(),'Accept all cookies')]")
+    public WebElement twitteracceptCookies;
 
-    //h1[normalize-space()='Antlara Dental Clinic']
+
 
 
 
