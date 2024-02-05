@@ -4,12 +4,12 @@ import com.github.javafaker.Faker;
 import io.cucumber.java.en.Given;
 import org.junit.Assert;
 import pages.HomePage;
-import pages.RegisterPage;
+import pages.SignUpPage;
 import utilities.ReusableMethods;
 
 public class TC0202_ReferAndEarnInputFilled {
     HomePage homePage = new HomePage();
-    RegisterPage registerPage = new RegisterPage();
+    SignUpPage signUpPage = new SignUpPage();
     Faker faker=new Faker();
 
     @Given("The user write a valid email")
@@ -27,7 +27,7 @@ public class TC0202_ReferAndEarnInputFilled {
     @Given("The user should be verifying that user sees the Affiliate Sign Up banner.")
     public void the_user_should_be_verifying_that_user_sees_the_affiliate_sign_up_banner() {
         ReusableMethods.wait(3);
-        Assert.assertTrue(registerPage.affiliateSignupText.isDisplayed());
+        Assert.assertTrue(signUpPage.affiliateSignupText.isDisplayed());
     }
 
 }
