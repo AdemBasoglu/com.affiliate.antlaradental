@@ -1,4 +1,3 @@
-@Smoke
 Feature: The user should be succesfuly login.
 
   Scenario: The user should be able to login successfully if the correct username and password are entered.

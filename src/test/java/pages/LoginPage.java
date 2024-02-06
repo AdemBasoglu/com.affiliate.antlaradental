@@ -21,6 +21,10 @@ public class LoginPage {
     @FindBy(xpath = "//input[@id='rememberme']")
     public WebElement rememberSelectBox;
 
+    @FindBy(xpath = "//div[@class='esaf-errors']")
+    public WebElement loginErrorText;
+
+
 
 
 
