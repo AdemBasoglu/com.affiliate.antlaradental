@@ -24,6 +24,14 @@ public class SignUpPage {
     public WebElement signUpSuccesfulyText;
     @FindBy(xpath = "//input[@id='_wafp_user_user_login']")
     public WebElement userNameInput;
+    @FindBy(xpath = "//div[@class='esaf-form-errors']")
+    public WebElement signupErrorText;
+    @FindBy(xpath = "//*[text()='Required and must be a valid email address']")
+    public WebElement requiredMailMessageText;
+
+
+
+
 
 
 

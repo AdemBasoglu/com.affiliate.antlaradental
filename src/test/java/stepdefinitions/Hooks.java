@@ -26,16 +26,16 @@ public class Hooks {
      fotografi cekip, rapora ekleyecek bir method olusturacagiz
      */
 
-    @After
-    public void tearDown(Scenario scenario){
 
+        @After
+        public void tearDown(Scenario scenario) {
 
-        if (scenario.isFailed()) {
-            final byte[] screenshot=((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
-            scenario.attach(screenshot, "src/test/resources/images/png","screenshots");
+            if (scenario.isFailed()) {
+                TakesScreenshot ts = (TakesScreenshot) Driver.getDriver();
+                scenario.attach(ts.getScreenshotAs(OutputType.BYTES), "image/png", "scenario_" + scenario.getName());
+                Driver.closeDriver();
+            }
             Driver.closeDriver();
-        }
-
     }
 
 }

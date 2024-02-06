@@ -8,10 +8,10 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
 
         //Allure report plugin
-       plugin = {"pretty", "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"},
-         //plugin = {"html:target/html-reports/rapor.html",
-           //        "json:target/json-reports/cucumber.json",
-             //      "junit:target/xml-report/cucumber.xml"},
+      // plugin =// {"pretty", "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"},
+         plugin = {"html:target/html-reports/rapor.html",
+                  "json:target/json-reports/cucumber.json",
+                 "junit:target/xml-report/cucumber.xml"},
         features = "src/test/resources/features", // calisacak Feature/Scenario'lar nerede ?
         glue = "stepdefinitions",    // calisacak Feature/Scenario'larin kodlari nerede?
         tags = "@Smoke",  // hangi Feature/Scenario'lar calisacak ?
@@ -28,7 +28,7 @@ public class Runner {
 
 /*
     Runner class'i TestNG'deki xml dosyalarina benzetilebilir
-    Runner sayesinde istedigimiz feature/scenario'lari
+    Runner sayesinde istedigimiz feature/scenario'lari<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
     tek basina veya toplu olarak calistirabiliriz
 
     Runner class'i sadece testlerimizi calistirmakla kalmaz

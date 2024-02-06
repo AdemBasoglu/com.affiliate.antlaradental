@@ -1,4 +1,3 @@
-@Smoke
 Feature: As a user, when I click on the Youtube icon, I should be directed to the relevant page.
 
   Scenario: As a user, when I click on the Youtube icon, I should be directed to the relevant page.
