@@ -12,7 +12,6 @@ import static utilities.Driver.driver;
 
 public class TC0404_ValidInformationButRequiredMail {
     SignUpPage signUpPage = new SignUpPage();
-    Faker faker = new Faker();
     Actions actions;
 
     @Given("The user fill in the form with correct information and required email")
