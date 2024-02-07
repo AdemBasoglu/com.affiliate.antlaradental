@@ -14,6 +14,7 @@ public class TC0101_Visibility {
 
     @Given("The user goes to home page")
     public void theUserGoesToHomePage() {
+        ReusableMethods.waitForPageToLoad(3);
         Driver.getDriver().get(ConfigReader.getProperty("toUrl"));
     }
 

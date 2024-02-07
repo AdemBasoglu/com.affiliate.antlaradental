@@ -44,6 +44,14 @@ public class ReusableMethods {
         }
         Driver.getDriver().switchTo().window(origin);
     }
+    //get text and change double number//
+    public static double getTextToDouble(WebElement webElement) {
+        String clicksCountText = webElement.getText()
+                                .replaceAll("[^0-9.]", "")
+                                .replaceAll(",", "");
+
+        return Double.parseDouble(clicksCountText);
+    }
 
 
 
