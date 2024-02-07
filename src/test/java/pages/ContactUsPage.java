@@ -20,8 +20,11 @@ public class ContactUsPage {
     public WebElement telNoInput;
     @FindBy(xpath = "//button[normalize-space()='Submit']")
     public WebElement submitButton;
-    @FindBy(xpath = "/html[1]/body[1]/div[1]/main[1]/div[1]/div[1]/div[1]/form[1]/div[5]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[24]/span[1]")
+    @FindBy(xpath = "//div[@class='iti__selected-flag']")
     public WebElement belgiumFlag;
+    @FindBy(xpath = "//div[@title='Belgium (België): +32']")
+    public WebElement flagDropdown;
+
     @FindBy(xpath = "//div[@role='alert']")
     public WebElement alertMessage;
 

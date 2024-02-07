@@ -36,12 +36,7 @@ public class TC0702_ContactUsWithReferalLink {
 
     @Given("The user writes a valid phone number")
     public void the_user_writes_a_valid_phone_number() {
-        ReusableMethods.wait(10);
-        contactUsPage.belgiumFlag.click();
-        contactUsPage.belgiumFlag.sendKeys("Belgium (België)");
-        ReusableMethods.wait(10);
-
-        contactUsPage.telNoInput.sendKeys(faker.phoneNumber().cellPhone());
+        contactUsPage.telNoInput.sendKeys( faker.phoneNumber().cellPhone());
         ReusableMethods.wait(10);
 
     }
