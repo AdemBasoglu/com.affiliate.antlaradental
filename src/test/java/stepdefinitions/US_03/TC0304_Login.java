@@ -18,7 +18,6 @@ public class TC0304_Login {
     @Given("The user verifies that the page title is Affiliate Login – Antlara Dental Affiliate")
     public void the_user_verifies_that_the_page_title_is_affiliate_login_antlara_dental_affiliate() {
         String targetTitle="Affiliate Login – Antlara Dental Affiliate";
-        ReusableMethods.switchToWindow(targetTitle);
         Assert.assertEquals(targetTitle, Driver.getDriver().getTitle());
     }
 }

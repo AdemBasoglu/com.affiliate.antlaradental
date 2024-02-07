@@ -1,4 +1,3 @@
-@Smoke
 Feature: Dashboard functions succesfully work
 
   Scenario: Dashboard links, tabs, buttons should be visiable and clickable
@@ -8,8 +7,9 @@ Feature: Dashboard functions succesfully work
     And The user writes username
     And The user writes password
     And The user click submit button in login page
-    And The user verify title Affiliate Dashboard – Antlara Dental Affiliate
-    And The user verify Home, LinksBanner, Acoount,Payments,Logout links are visiable and clickable
-    And The user verify My Affiliate Link,My Affiliate Copy Link,Current Balance,Estimated Next Payout are visiable
-    And The user verifyClicks,Conversions,Revenue,Commission Rate,Commissions,Voids,Avg. Earns Per Click are visiable
+    And The user switch succesfully LinksBanner link
+    And The user verify Text Tag,Banners Tag and Banners image are visible and clickable
+    And The user switch succesfully Acoount link
+    And The user switch succesfully Payments link
+    And The user switch succesfully Logout link
     Then The user close window

@@ -13,7 +13,7 @@ public class DashboardPage {
     @FindBy(xpath = "//a[normalize-space()='Home']")
     public WebElement homeLink;
 
-    @FindBy(xpath = "//a[normalize-space()='Links & Banners']")
+    @FindBy(xpath = "//a[contains(text(),'Links & Banners')]")
     public WebElement linksAndBannersLink;
 
     @FindBy(xpath = "//a[normalize-space()='Account']")
@@ -44,6 +44,36 @@ public class DashboardPage {
     public WebElement currentBalanceCount;
     @FindBy(xpath = "(//div[@class='esaf-affiliate-dashboard-home-box-amount'])[2]")
     public WebElement estimatedNextPayoutCount;
+    @FindBy(xpath = "//div[@class='esaf-affiliate-dashboard-custom-message']")
+    public WebElement homeTagWelcomeText;
+
+    @FindBy(xpath = "(//*[text()='Links & Banners'])[2]")
+    public WebElement linksAndBannerTag;
+    @FindBy(xpath = "//li[@class='esaf-creatives-nav-active']")
+    public WebElement bannersTag;
+    @FindBy(xpath = "//li[@class='esaf-creatives-nav-active']")
+    public WebElement textTag;
+
+    @FindBy(xpath = "//img[@class='esaf-banner-link-get-html-code entered litespeed-loaded']\n")
+    public WebElement bannerImage;
+    @FindBy(xpath = "//h3[normalize-space()='Affiliate Profile']")
+    public WebElement affiliateProfiletTitle;
+    @FindBy(xpath = "//h3[normalize-space()='Payment History']")
+    public WebElement paymentsTitle;
+    @FindBy(id = "esaf-dashboard-paypal-email")
+    public WebElement accountPagePaypalInput;
+    @FindBy(xpath = "//button[normalize-space()='Save Profile']")
+    public WebElement savedProfilButton;
+    @FindBy(id = "esaf-account-saved")
+    public WebElement succesfullySavedProfileText;
+
+
+
+
+
+
+
+
 
 
 }

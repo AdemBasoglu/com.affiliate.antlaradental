@@ -6,6 +6,7 @@ import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
 public class LoginPage {
+    public static String username="adembas";
 
 
     public LoginPage() {

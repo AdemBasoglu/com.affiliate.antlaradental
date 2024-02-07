@@ -1,4 +1,3 @@
-@Smoke
 Feature: Dashboard functions succesfully work
 
   Scenario: Dashboard links, tabs, buttons should be visiable and clickable
