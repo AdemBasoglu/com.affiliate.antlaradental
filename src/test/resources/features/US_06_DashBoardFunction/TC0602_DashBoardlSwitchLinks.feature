@@ -1,7 +1,7 @@
 @Smoke
-Feature: Dashboard functions succesfully work
+Feature: Dashboard switch the links succesfully
 
-  Scenario: Dashboard links, tabs, buttons should be visiable and clickable
+  Scenario: The user switchs Dashboard links successfully
 
     Given The user goes to home page
     And The user click Login link

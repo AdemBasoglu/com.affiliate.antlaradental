@@ -1,5 +1,5 @@
 @Smoke
-Feature: Refer and Earn input and submit button should be visiable.
+Feature: Refer and Earn input and submit button should be visiable and clickable.
 
   Scenario:As a user Refer and Earn input and submit button should be visible and clickable on the Home Page.
 

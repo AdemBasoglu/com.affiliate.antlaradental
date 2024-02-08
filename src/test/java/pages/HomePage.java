@@ -45,7 +45,7 @@ public class HomePage {
     @FindBy(xpath = "//button[@id='wpforms-submit-24']")
     public WebElement submitButton;
 
-    @FindBy(xpath = "//button[normalize-space()='Allow all cookies'])[1]")
+    @FindBy(xpath = "(//button[normalize-space()='Allow all cookies'])[1]")
     public WebElement facebookAcceptCookies;
 
 

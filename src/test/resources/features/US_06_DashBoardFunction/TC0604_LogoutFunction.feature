@@ -1,5 +1,5 @@
 @Smoke
-Feature: he User should logout successfully
+Feature: The User should logout successfully
 
   Scenario: As a user, I should be able to log out successfully when I click on the logout tab in the dashboard.
 

@@ -1,4 +1,4 @@
-@Smoke
+@Smoke²
 Feature: The user should be succesfuly register.
 
   Scenario: When the user correct data is entered and the registration button is clicked, you should be redirected
