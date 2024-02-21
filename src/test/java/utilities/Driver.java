@@ -1,10 +1,13 @@
 package utilities;
 
+import io.qameta.allure.Allure;
+import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.ui.Select;
 
@@ -31,9 +34,23 @@ public class Driver {
                 driver = new SafariDriver();
             } else if ("chrome-headless".equals(browser)) {
             }
+            logBrowserAndPlatformInfo();
         }
         driver.manage().window().maximize();
         return driver;
+    }
+    private static void logBrowserAndPlatformInfo() {
+        if (driver != null) {
+            Capabilities capabilities = ((RemoteWebDriver) driver).getCapabilities();
+            String browserName = capabilities.getBrowserName();
+            String browserVersion = capabilities.getBrowserVersion();
+            String platform = capabilities.getPlatformName().toString();
+
+            String infoText = String.format("Tarayıcı: %s %s, Platform: %s", browserName, browserVersion, platform);
+
+            // Allure raporlarına attachment (ek dosya) ekleyin
+            Allure.addAttachment("Tarayıcı ve Platform Bilgileri", infoText);
+        }
     }
 
     public static void closeDriver() {
